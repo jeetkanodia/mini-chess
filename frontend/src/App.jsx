@@ -1,11 +1,15 @@
-import { useState } from "react";
-import socketIO from "socket.io-client";
-const socket = socketIO.connect("http://localhost:4000");
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Home from "./components/Home";
+import Game from "./components/Game";
+
 function App() {
   return (
-    <div className="bg-black h-screen w-full text-white flex justify-center items-center">
-      MINI CHESS
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/game" element={<Game />} />
+      </Routes>
+    </Router>
   );
 }
 
